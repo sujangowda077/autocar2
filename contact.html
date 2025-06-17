@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - AutoDrive</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 173, 238, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+      transition: background-position 0.05s ease-out;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+      background: #1a1a1a;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #00adee;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 12px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(0, 173, 238, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #333;
+      color: #fff;
+      resize: vertical;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #00adee;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #008bbd;
+    }
+
+    a {
+      display: block;
+      margin: 30px auto;
+      width: fit-content;
+      text-align: center;
+      color: #00adee;
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1a1a1a;
+      margin-top: 40px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 data-aos="fade-down">Contact AutoDrive</h1>
+    <p data-aos="fade-up">We'd love to hear from you</p>
+  </header>
+
+  <div class="container" data-aos="zoom-in">
+    <form action="#" method="post">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required />
+      </div>
+      <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <a href="index.html">← Back to Home</a>
+
+  <footer>
+    &copy; 2025 AutoDrive Inc. All rights reserved.
+  </footer>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Mouse spotlight effect
+    document.addEventListener("mousemove", function(e) {
+      document.body.style.setProperty("--x", e.clientX + "px");
+      document.body.style.setProperty("--y", e.clientY + "px");
+    });
+  </script>
+</body>
+</html>
