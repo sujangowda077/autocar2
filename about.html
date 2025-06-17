@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - AutoDrive</title>
+
+  <!-- Google Fonts & AOS Animation -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0d0d0d, #1f1f1f);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 173, 238, 0.1), transparent 40%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: url("lamborghini.jpg") center/cover no-repeat;
+      position: relative;
+      z-index: 2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* dark overlay */
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #00adee;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      padding: 40px 30px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #00adee;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      display: block;
+      margin: 40px auto;
+      width: fit-content;
+      text-align: center;
+      color: #00adee;
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.3);
+      margin-top: 40px;
+      color: #888;
+      z-index: 2;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 data-aos="fade-down">About AutoDrive</h1>
+    <p data-aos="fade-up">Driven by Innovation, Powered by Intelligence</p>
+  </header>
+
+  <section class="content">
+    <h2 data-aos="fade-right">Our Vision</h2>
+    <p data-aos="fade-up">
+      AutoDrive is committed to revolutionizing smart mobility. We envision a future where vehicles are not just transportation but intelligent companions on the road.
+    </p>
+
+    <h2 data-aos="fade-right">Who We Are</h2>
+    <p data-aos="fade-up">
+      We're a team of innovators, engineers, and automotive enthusiasts dedicated to creating the most advanced and eco-conscious driving experiences.
+    </p>
+
+    <h2 data-aos="fade-right">What Makes AutoDrive Special?</h2>
+    <ul data-aos="fade-up">
+      <li>⚙️ Proprietary AI Autopilot system</li>
+      <li>🔋 Industry-leading electric drive-train</li>
+      <li>🌍 Eco-friendly and sustainable design</li>
+      <li>📡 Real-time connectivity and diagnostics</li>
+      <li>📱 Seamless smartphone integration</li>
+    </ul>
+
+    <a href="index.html">← Back to Home</a>
+  </section>
+
+  <footer>
+    &copy; 2025 AutoDrive Inc. All rights reserved.
+  </footer>
+
+  <!-- AOS and Mouse Light Effect -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.addEventListener("mousemove", function(e) {
+      document.body.style.setProperty("--x", e.clientX + "px");
+      document.body.style.setProperty("--y", e.clientY + "px");
+    });
+  </script>
+</body>
+</html>
